@@ -1,0 +1,51 @@
+
+
+.textoCentrado{
+  text-align: center;
+}
+
+div p {
+    margin-top: 0%;
+  }
+  #menu-outer {
+    height: 84px;
+    background: url(images/bar-bg.jpg) repeat-x;
+  }
+  .table {
+    display: table; /* Allow the centering to work */
+    margin: 0 auto;
+  }
+  
+  ul#horizontal-list {
+    min-width: 696px;
+    list-style: none;
+    padding-top: 20px;
+  }
+  ul#horizontal-list li {
+    display: inline;
+  }
+  .elements {
+    background-color: rgb(120, 120, 120);
+    border-radius: 10px;
+  }
+  hr {
+    height: 0.5px;
+    color: rgb(125, 125, 125);
+    background: black;
+    border-color: black;
+  }
+  .textoCentrado {
+    text-align: center;
+  }
+  .my-image {
+    max-width: 100%;
+    height: auto;
+    margin-right: 10%;
+  }
+  
+  li {
+    display: inline-block;
+  }
+  
+  
+  

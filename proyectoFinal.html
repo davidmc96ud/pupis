@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styleProyectoFinal.css">
+    <title>Ventana principal</title>
+  </head>
+  <body
+    style="
+      background-color: rgb(255, 255, 255);
+      margin: 0;
+      font-family: 'Koulen';
+    "
+  >
+    <header style="background-color: rgb(255, 130, 53); height: 60px">
+      <h1 class="textoCentrado" style="margin: unset">Mi proyecto final</h1>
+    </header>
+
+    <div style="border: bottom 30px; background-color: yellow">
+      <p class="textoCentrado" style="margin-bottom: unset; font-size: 40px">Noticias del momento</p>
+
+      <hr />
+    </div>
+    
+
+    <div id="insercionNoticias"></div>
+    <button onclick="cambiarNoticia(1)">Atras</button>
+    <button onclick="cambiarNoticia(2)">Siguiente</button>
+
+    <script>
+      function cambiarNoticia(valor) {
+        if (valor == 1) {
+          ++number;
+        }
+        if (valor == 2) {
+          --number;
+        }
+
+        /* location.reload() */
+      }
+      /* fetch('https://gnews.io/api/v4/search?q=example&token=c9e124ffba053a5ff47eb60c1472dc69')
+        .then((data)=>{
+            return data.json();
+        })
+        .then((completeData)=>{
+            console.log(completeData.articles[0].title)
+        }) */
+
+      const apiData = {
+        url: "https://davidmc96ud.github.io/jsonApiPupisNews/search.json",
+      };
+
+      const { url, type, id } = apiData;
+      const apiUrl = `${url}`;
+      /* console.log(apiUrl) */
+      let number = 3;
+
+      fetch(apiUrl)
+        .then((data) => data.json())
+        .then((articulo) => generateHtml(articulo));
+
+      const generateHtml = (data) => {
+        /* console.log(data) */
+        console.log(data.articles[number].title);
+
+        const html = `
+        <h1  style="text-align: center; font-size: 40px; color: rgb(18, 60, 197)">
+                    ${data.articles[number].title} </h1>
+      <div class="table">
+        <ul id="horizontal-list style="margin-top: unset; padding-top: unset;"">
+          <p class="textoCentrado" id="Parrafo" style="margin: 4%;font-size: 30px;">
+            ${data.articles[number].description}
+          </p>
+          <p class="textoCentrado" id="Parrafo" style="margin: 4%;font-size: 20px;">
+            ${data.articles[number].content}
+          </p>
+          <img src="${data.articles[number].image}" class="my-image" alt="">
+        </ul>
+      </div> `;
+
+        document.getElementById("insercionNoticias").innerHTML = html;
+      };
+
+      function cambiarNoticia(valor) {
+        if (valor == 2) {
+          number++;
+        }
+        if (valor == 1) {
+          number--;
+        }
+        console.log(number);
+        return  fetch(apiUrl)
+        .then((data) => data.json())
+        .then((articulo) => generateHtml(articulo));
+        /* location.reload() */
+      }
+    </script>
+  </body>
+</html>

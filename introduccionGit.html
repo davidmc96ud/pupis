@@ -1,14 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hola, mundo</h1>
-    <h2>Te damos la bienvenida al mundo de la programación web </h2>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Koulen&display=swap"
+      rel="stylesheet"
+    />
+    <title>Ventana principal</title>
+  </head>
+  <body
+    style="
+      background-color: rgb(255, 255, 255);
+      margin: 0;
+      font-family: 'Koulen';
+    "
+  >
+    <header style="background-color: rgb(255, 130, 53); height: 60px">
+      <h1 class="textoCentrado" style="margin: unset">Mi proyecto final</h1>
+    </header>
+
+    <div style="border: bottom 30px; background-color: yellow">
+      <p class="textoCentrado" style="font-size: 40px">Noticias del momento</p>
+
+      <hr />
+    </div>
+    <style>
+      div p {
+        margin-top: 0%;
+      }
+      #menu-outer {
+        height: 84px;
+        background: url(images/bar-bg.jpg) repeat-x;
+      }
+      .table {
+        display: table; /* Allow the centering to work */
+        margin: 0 auto;
+      }
+
+      ul#horizontal-list {
+        min-width: 696px;
+        list-style: none;
+        padding-top: 20px;
+      }
+      ul#horizontal-list li {
+        display: inline;
+      }
+      .elements {
+        background-color: rgb(120, 120, 120);
+        border-radius: 10px;
+      }
+      hr {
+        height: 0.5px;
+        color: rgb(125, 125, 125);
+        background: black;
+        border-color: black;
+      }
+      .textoCentrado {
+        text-align: center;
+      }
+      .my-image {
+        width: 200px;
+        height: 200px;
+      }
+
+      li {
+        display: inline-block;
+      }
+    </style>
+    <div id="tituloNoticia"></div>
+    <h1  style="text-align: center; font-size: 40px; color: rgb(18, 60, 197)">
+      Nombre noticia
+    </h1>
     
-</body>
+
+    <div id="menu-outer">
+      <div class="table">
+        <ul id="horizontal-list">
+          <p id="Parrafo" style="margin: 4%">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nulla,
+            rerum nemo quo libero molestiae cum facilis nostrum dolores! Vel in
+            nesciunt blanditiis quo facere earum adipisci minus ut repellat!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Necessitatibus tempora veritatis enim. Molestiae inventore
+            accusantium ullam sequi nulla distinctio consequuntur quod tenetur
+            sit odio? Iusto officiis accusamus temporibus corrupti libero! Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+            inventore a quam aliquam fugiat nemo adipisci atque nesciunt, rerum
+            totam possimus rem dolorem, ea debitis itaque. Aliquid consectetur
+            in explicabo.
+          </p>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+
+        /* fetch('https://gnews.io/api/v4/search?q=example&token=c9e124ffba053a5ff47eb60c1472dc69')
+        .then((data)=>{
+            return data.json();
+        })
+        .then((completeData)=>{
+            console.log(completeData.articles[0].title)
+        }) */
+       
+        
+        const apiData={
+            url: 'https://gnews.io/api/v4/search?q=example&token=c9e124ffba053a5ff47eb60c1472dc69'            
+        }
+
+        const {url, type, id}= apiData
+        const apiUrl= `${url}`
+        /* console.log(apiUrl) */
+
+        fetch(apiUrl)
+            .then((data)=>data.json())
+            
+            .then((articulo)=>generateHtml(articulo))
+            
+        
+        const generateHtml=(data) =>{
+            /* console.log(data) */
+            console.log(data.articles[0].title)
+
+            const html =`
+                
+                <h1 id="tituloNoticia">${data.articles[0].title}</h1>`
+                
+                const noticiah1= document.querySelector('.tituloNoticia')
+        noticiah1.innerHTML=html
+        }
+        
+        /* 
+      const objetoHtml = "parrafo";
+      //token= c9e124ffba053a5ff47eb60c1472dc69
+      const url =
+        "https://gnews.io/api/v4/{endpoint}?token=c9e124ffba053a5ff47eb60c1472dc69";
+      fetch(url + parrafo)
+        .then(function (response) {
+          return response.json;
+        })
+
+        .then(function (data) {})
+
+        .catch(function () {
+          let li = crearNodo("li");
+          let img = crearNodo("img");
+        });
+      console.log(url); */
+    </script>
+  </body>
 </html>

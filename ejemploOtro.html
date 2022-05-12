@@ -4,47 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="styleIndex.css">
-<link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet"> 
     <title>Ventana principal</title>
   </head>
-  <body >
-    <style>
-      p{
-        font-size: 20px;
-        margin-top: unset;
-      }
-      body{
-        background-color: rgb(255, 255, 255); 
-        margin: 0; 
-        font-family: 'Koulen';
-        text-align: center;
+  <body style="background-color: rgb(255, 255, 255); margin: 0">
 
-      }
-      .my-image {
-        width: 200px;
-        height: 200px;
-      }
-      header{
-        background-color: rgb(255, 130, 53); 
-        height: 60px;
-
-      }
-      .textoCentrado{
-        text-align: center;
-      }
-    </style>
-
-    <header >
+    <header style="background-color: rgb(255, 130, 53); height: 60px">
       <h1 class="textoCentrado" style="margin: unset">
         Mi portafolio de proyectos
       </h1>
     </header>
 
     <div style="border: bottom 20px ; background-color: yellow;">
-      <p class="textoCentrado" >
+      <p class="textoCentrado" style="font-size: 20px;">
         Te doy la bienvenida al mundo de la programación,
         Advertencia una vez que inicias este curso , no volveras a ser la misma
         persona
@@ -52,7 +23,49 @@
       
       <hr />
     </div>
-    
+    <style>
+      div p{
+        margin-top: 0%;
+      }
+      #menu-outer {
+        height: 84px;
+        background: url(images/bar-bg.jpg) repeat-x;
+      }
+      .table {
+        display: table; /* Allow the centering to work */
+        margin: 0 auto;
+      }
+
+      ul#horizontal-list {
+        min-width: 696px;
+        list-style: none;
+        padding-top: 20px;
+      }
+      ul#horizontal-list li {
+        display: inline;
+      }
+      .elements {
+        background-color: rgb(120, 120, 120);
+        border-radius: 10px;
+      }
+      hr {
+        height: 0.5px;
+        color: rgb(125, 125, 125);
+        background: black;
+        border-color: black;
+      }
+      .textoCentrado {
+        text-align: center;
+      }
+      .my-image {
+        width: 200px;
+        height: 200px;
+      }
+
+      li {
+        display: inline-block;
+      }
+    </style>
     <h1 style="text-align: center; font-size: 40px; color: rgb(18, 60, 197)">
       Mis Proyectos Del Curso
     </h1>
@@ -63,36 +76,34 @@
           <a href="https://davidmc96ud.github.io/pupis/indexPokeDex.html">
             <img
               src="imagenesPractica/pokeDexIndex.png"
-              
-              alt="pokedex"
+              href="https://davidmc96ud.github.io/pupis/indexPokeDex.html"
+              alt="mercurio"
               class="my-image elements"
               style="background-color: aliceblue"
             /></a>
           <a href="https://davidmc96ud.github.io/pupis/sistemaSolar.html">
             <img
               src="imagenesPractica/planetas.png"
-              
-              alt="planetas"
+              href="https://davidmc96ud.github.io/pupis/indexPokeDex.html"
+              alt="mercurio"
               class="my-image elements"
               style="background-color: aliceblue"
             /></a>
           <a href="https://davidmc96ud.github.io/pupis/practica_html.html">
             <img
               src="imagenesPractica/ventas.png"
-              
-              alt="Pagina de ventas"
+              href="https://davidmc96ud.github.io/pupis/indexPokeDex.html"
+              alt="mercurio"
               class="my-image elements"
               style="background-color: aliceblue"
             /></a>
-<!-- ----------CAMBIAR REFERENCIA DE LA PAGINA ANTES DE SUBIR----- -->
-            <a href="https://davidmc96ud.github.io/pupis/proyectoFinal.html">
-              <img
-                src="imagenesPractica/news.ico"
-                
-                alt="noticias del momento"
-                class="my-image elements"
-                style="background-color: aliceblue"
-              /></a>
+
+          <img
+            src="imagenesPractica/pokedex.png"
+            alt="mercurio"
+            class="my-image elements"
+            style="background-color: aliceblue"
+          />
         </ul>
       </div>
     </div>

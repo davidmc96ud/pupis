@@ -1,0 +1,25 @@
+
+      p{
+        font-size: 20px;
+        margin-top: unset;
+      }
+      body{
+        background-color: rgb(255, 255, 255); 
+        margin: 0; 
+        font-family: 'Koulen';
+        text-align: center;
+
+      }
+      .my-image {
+        width: 200px;
+        height: 200px;
+      }
+      header{
+        background-color: rgb(255, 130, 53); 
+        height: 60px;
+
+      }
+      .textoCentrado{
+        text-align: center;
+      }
+    
