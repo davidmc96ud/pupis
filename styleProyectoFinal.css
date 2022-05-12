@@ -47,5 +47,13 @@ div p {
     display: inline-block;
   }
   
+  .boton{
+    width: 120px;
+    height: 60px;
+    background-color: rgb(238, 160, 64);
+    border-color: rgb(151, 101, 40);;
+    border-radius: 10px;
+    font-size: 25px;
+  }
   
   
